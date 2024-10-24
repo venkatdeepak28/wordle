@@ -17,7 +17,7 @@ let db = null
 const port = process.env.PORT || 5000
 
 
-app.get('/random', async (request, response) => {
+app.get('/', async (request, response) => {
     const sqlValue = "select * from dictonary order by random() limit 1"
     const value = await db.get(sqlValue)
     response.send(value)
